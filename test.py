@@ -144,34 +144,38 @@ class ProductManager:
                 print('-' * 120)
 
     def statistics(self):
-        count_thap = 0
-        count_tb = 0
-        count_kha = 0
-        count_cao = 0
+        if not self.products:
+            print('Chưa có dữ liệu để thống kê')
+            
+        else: 
+            count_thap = 0
+            count_tb = 0
+            count_kha = 0
+            count_cao = 0
 
-        for product in self.products:
-            if product.revenue_type == 'Thấp':
-                count_thap += 1
-            elif product.revenue_type == 'Trung bình':
-                count_tb += 1
-            elif product.revenue_type == 'Khá':
-                count_kha += 1
-            else:
-                count_cao += 1
+            for product in self.products:
+                if product.revenue_type == 'Thấp':
+                    count_thap += 1
+                elif product.revenue_type == 'Trung bình':
+                    count_tb += 1
+                elif product.revenue_type == 'Khá':
+                    count_kha += 1
+                else:
+                    count_cao += 1
 
-        print("-" * 55)
-        print("             --- THỐNG KÊ ---")
-        print("-" * 55)
-        print(f"{'Phân loại doanh thu':<25} | {'Số lượng sản phẩm':<20} |")
-        print("-" * 55)
-        print(f'{'Thấp':<25} | {count_thap:<20} |')
-        print("-" * 55)
-        print(f'{'Trung bình':<25} | {count_tb:<20} |')
-        print("-" * 55)
-        print(f'{'Khá':<25} | {count_kha:<20} |')
-        print("-" * 55)
-        print(f'{'Cao':<25} | {count_cao:<20} |')
-        print('-'*55)
+            print("-" * 55)
+            print("             --- THỐNG KÊ ---")
+            print("-" * 55)
+            print(f"{'Phân loại doanh thu':<25} | {'Số lượng sản phẩm':<20} |")
+            print("-" * 55)
+            print(f'{'Thấp':<25} | {count_thap:<20} |')
+            print("-" * 55)
+            print(f'{'Trung bình':<25} | {count_tb:<20} |')
+            print("-" * 55)
+            print(f'{'Khá':<25} | {count_kha:<20} |')
+            print("-" * 55)
+            print(f'{'Cao':<25} | {count_cao:<20} |')
+            print('-'*55)
          
 def input_float(prompt, min_value = 0):
     while True:
