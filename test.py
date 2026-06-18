@@ -263,4 +263,5 @@ def main():
         else:
             print("Lựa chọn không hợp lệ!")
 
-main()
+if __name__ == "__main__":
+    main()
