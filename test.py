@@ -177,6 +177,7 @@ def input_float(prompt, min_value = 0):
     while True:
         try:
             value = float(input(prompt))
+            
             if value < min_value:
                 print(f'Giá trị phải >= {min_value}')
                 continue
